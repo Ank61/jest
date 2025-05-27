@@ -1,23 +1,23 @@
-version: "3.8"
+# version: "3.8"
 
-services:
-  mongo:
-    image: mongo:5.0
-    container_name: test-mongo
-    ports:
-      - "27017:27017"
-    environment:
-      MONGO_INITDB_DATABASE: test-db
+# services:
+#   mongo:
+#     image: mongo:5.0
+#     container_name: test-mongo
+#     ports:
+#       - "27017:27017"
+#     environment:
+#       MONGO_INITDB_DATABASE: test-db
 
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: node-app
-    ports:
-      - "3000:3000"
-    depends_on:
-      - mongo
-    environment:
-      MONGO_URI: mongodb://mongo:27017/test-db
-    command: npm test
+#   app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     container_name: node-app
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       - mongo
+#     environment:
+#       MONGO_URI: mongodb://mongo:27017/test-db
+#     command: npm test
