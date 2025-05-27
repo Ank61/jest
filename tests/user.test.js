@@ -6,8 +6,22 @@ const { MongoMemoryServer } = require("mongodb-memory-server");
 
 let mongoServer;
 
+// beforeAll(async () => {
+//   await mongoose.connect("mongodb://127.0.0.1:27017/test-db", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   });
+// });
+
+// afterAll(async () => {
+//   await mongoose.disconnect();
+// });
+
 beforeAll(async () => {
-  await mongoose.connect("mongodb://127.0.0.1:27017/test-db", {
+  mongoServer = await MongoMemoryServer.create();
+  const uri = mongoServer.getUri();
+
+  await mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
@@ -15,8 +29,8 @@ beforeAll(async () => {
 
 afterAll(async () => {
   await mongoose.disconnect();
+  await mongoServer.stop();
 });
-
 beforeEach(async () => {
   await User.deleteMany();
 });
