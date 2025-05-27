@@ -6,6 +6,7 @@ exports.getAllUsers = async (req, res) => {
 };
 
 exports.createUser = async (req, res) => {
+  let here = "djksb";
   const user = await service.create(req.body);
   res.status(201).json(user);
 };
