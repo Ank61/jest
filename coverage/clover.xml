@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1748320730634" clover="3.2.0">
-  <project timestamp="1748320730634" name="All files">
-    <metrics statements="30" coveredstatements="30" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4" elements="34" coveredelements="34" complexity="0" loc="30" ncloc="30" packages="5" files="6" classes="6"/>
+<coverage generated="1748337787063" clover="3.2.0">
+  <project timestamp="1748337787063" name="All files">
+    <metrics statements="31" coveredstatements="31" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4" elements="35" coveredelements="35" complexity="0" loc="31" ncloc="31" packages="5" files="6" classes="6"/>
     <package name="src">
       <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.js" path="/Users/surender/Documents/Coding/Personal/jest/project/src/app.js">
@@ -15,9 +15,9 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="user.controller.js" path="/Users/surender/Documents/Coding/Personal/jest/project/src/controllers/user.controller.js">
-        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -25,6 +25,7 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.models">

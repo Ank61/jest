@@ -2,35 +2,21 @@ const request = require("supertest");
 const mongoose = require("mongoose");
 const app = require("../src/app");
 const User = require("../src/models/user.model");
-const { MongoMemoryServer } = require("mongodb-memory-server");
-
-let mongoServer;
-
-// beforeAll(async () => {
-//   await mongoose.connect("mongodb://127.0.0.1:27017/test-db", {
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//   });
-// });
-
-// afterAll(async () => {
-//   await mongoose.disconnect();
-// });
 
 beforeAll(async () => {
-  mongoServer = await MongoMemoryServer.create();
-  const uri = mongoServer.getUri();
-
-  await mongoose.connect(uri, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
+  await mongoose.connect(
+    process.env.MONGO_URI || "mongodb://localhost:27017/test-db",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  );
 });
 
 afterAll(async () => {
   await mongoose.disconnect();
-  await mongoServer.stop();
 });
+
 beforeEach(async () => {
   await User.deleteMany();
 });
